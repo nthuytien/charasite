@@ -25,6 +25,10 @@ hr {
   height:500px;
   width:265px;
 }
+.imageC{
+  height:500px;
+  width:300px;
+}
 .button button{
   background-color: #2b1b49;
   color: white;
@@ -59,6 +63,21 @@ hr {
   font-weight: bold;
   
 }
+
+.header-image2 {
+  text-align: center;
+  padding:150px;
+  background-attachment: fixed;
+  background-image:url('./bg3.jpg');
+  background-size:cover;
+  width:80%;
+  height:70%;
+  font-size: 100px;
+  color:white;
+  font-family: Helvetica;
+  font-weight: bold;
+  
+}
 html, .App-body
 {
   background-color:#19142e;
@@ -68,11 +87,28 @@ html, .App-body
   color:white;
 
 }
+.charaHeader
+{
+  font-family: "Orbitron-Medium";
+  font-size: 40px;
+  color:white;
+}
 
 .column {
   float: left;
   width: 30%;
   padding: 5px;
+}
+
+.column2 {
+  float: right;
+  width: 65%;
+  padding: 20px;
+}
+.column3 {
+  float: left;
+  width: 20%;
+  padding: 50px;
 }
 
 /* Clearfix (clear floats) */

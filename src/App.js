@@ -1,7 +1,37 @@
-
+import React, { Component }  from 'react';
 import './App.css';
+import Player from './player';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  useNavigate,
+  
+} from 'react-router-dom';
 
 function App() {
+  return (
+    <Router>
+      <Routes>
+      <Route exact path="/" element={<Home />} />
+      <Route path="/player" element={<Player/>}/>
+      </Routes>
+      
+    </Router>
+  )
+}
+
+
+function Home() {
+  
+  let navigate = useNavigate();
+
+  const routeChange = () => {
+    let path = '/player'
+    navigate(path)
+  }
+
+
   return (
     <div className="App">
       <div className="body">
@@ -23,7 +53,7 @@ Nibh ipsum consequat nisl vel pretium. Nulla posuere sollicitudin aliquam ultric
     <br/>
       <div className='button'>
 
-        <button>Rulebook</button>  <button>NPC Characters</button>  <button>Player Characters</button>
+        <button>Rulebook</button>  <button>NPC Characters</button>  <button onClick={routeChange}>Player Characters</button> <button>Campaign</button> 
       </div>
 
       <br/><br/>
