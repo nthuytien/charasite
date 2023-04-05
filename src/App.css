@@ -1,38 +1,83 @@
 .App {
   text-align: center;
+  background-color:#19142e;
+  width: 100%;
+  height: 100%;
+  color:white;
+  font-family: 'Courier';
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+hr {
+  height:1px;
+  border-width:0;
+  background-color:#6f678a;
 }
+.blurb{
+  width: 95%;
+  height: 100%;
+  padding:10px;
+  color:white;
+  font-style:italic;
+  text-align:center;
+  font-family: 'Courier';
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.imageN{
+  height:500px;
+  width:265px;
+}
+.button button{
+  background-color: #2b1b49;
   color: white;
+  font-size: 20px;
+  padding: 10px 60px;
+  border-radius: 5px;
+  margin: 10px 0px;
+  font-family: "Orbitron-Medium";
+  cursor: pointer;
+}
+.header {
+  padding:100px;
+  background-color:#ecf3f8;
+  font-size: 100px;
+  font-family: Helvetica;
+  font-weight: bold;
+}
+.font-face {
+  font-family: "Orbitron-Medium";
+ }
+.header-image {
+  text-align: center;
+  padding:150px;
+  background-attachment: fixed;
+  background-image:url('./bg1q2.jpg');
+  background-size:cover;
+  width:80%;
+  height:70%;
+  font-size: 100px;
+  color:white;
+  font-family: Helvetica;
+  font-weight: bold;
+  
+}
+html, .App-body
+{
+  background-color:#19142e;
+  margin:10;
+  padding:10;
+  font-family: "Orbitron-Medium";
+  color:white;
+
 }
 
-.App-link {
-  color: #61dafb;
+.column {
+  float: left;
+  width: 30%;
+  padding: 5px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
 }
