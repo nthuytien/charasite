@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+let mongoose = require("mongoose");
 //require('dotenv').config()
 
 async function dbConnect() {

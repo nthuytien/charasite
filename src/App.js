@@ -66,16 +66,16 @@ Nibh ipsum consequat nisl vel pretium. Nulla posuere sollicitudin aliquam ultric
       </div>
 
       <br/><br/>
-      <div class="row"><div class="column">
-      <img class="imageN" src= {require('./assets/net.png')}/> 
+      <div className="row"><div className="column">
+      <img className="imageN" src= {require('./assets/net.png')}/> 
       </div>
-      <div class="column">
+      <div className="column">
       Diverse Characters 
       <br/> <br/>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Libero enim sed faucibus turpis in eu mi bibendum neque. Ullamcorper sit amet risus nullam eget felis eget nunc. Vulputate eu scelerisque felis imperdiet proin fermentum leo vel. Vestibulum morbi blandit cursus risus at ultrices mi. Amet aliquam id diam maecenas ultricies mi eget. Aenean et tortor at risus viverra adipiscing at in tellus. Feugiat sed lectus vestibulum mattis ullamcorper velit sed ullamcorper morbi. Tortor condimentum lacinia quis vel. Tempor id eu nisl nunc mi ipsum. Id faucibus nisl tincidunt eget nullam non nisi est. Ac tortor vitae purus faucibus. Adipiscing diam donec adipiscing tristique. Interdum velit euismod in pellentesque massa placerat duis ultricies lacus. Laoreet suspendisse interdum consectetur libero id faucibus nisl tincidunt. Lobortis elementum nibh tellus molestie. A iaculis at erat pellentesque adipiscing commodo elit at. Id neque aliquam vestibulum morbi blandit cursus risus at ultrices.
       </div>
-      <div class="column">
-      <img class="imageN" src= {require('./assets/hot.png')}/>
+      <div className="column">
+      <img className="imageN" src= {require('./assets/hot.png')}/>
       </div>
       </div>
       <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
