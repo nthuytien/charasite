@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, useState, useEffect } from 'react';
 import './App.css';
 import {
   BrowserRouter as Router,
@@ -11,6 +11,8 @@ import {
 
 function Chara() {
 
+  console.log("TEST")
+
   let backgroundImageURL = "./assets/bg3.jpg"
 
   let navigate = useNavigate();
@@ -19,6 +21,31 @@ function Chara() {
     let path = '/'
     navigate(path)
   }
+
+  useEffect(() => {
+    async function getRecords() {
+      console.log("Fetching...")
+      const response = await fetch(`http://localhost:5000/record/`);
+  
+      if (!response.ok) {
+        const message = `An error occurred: ${response.statusText}`;
+        window.alert(message);
+        return;
+      }
+      else{
+        console.log("No error!")
+      }
+  
+      const records = await response.json();
+      //setRecords(records);
+      console.log("Got records!")
+      console.log(records)
+    }
+  
+    getRecords();
+  
+    return;
+  }, [0]);
 
 
   return (
@@ -41,12 +68,12 @@ function Chara() {
 
 
         <br /><br />
-        <div class="row"><div class="column3">
-          <img class="imageC" src={require('./assets/marcie.png')} />
+        <div className="row"><div className="column3">
+          <img className="imageC" src={require('./assets/marcie.png')} />
         </div>
-          <div class="column2">
+          <div className="column2">
 
-            <div class="charaHeader">
+            <div className="charaHeader">
               Marcelina Czerwinski
             </div>
             Polish | Techie | 22 | Bisexual

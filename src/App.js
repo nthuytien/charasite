@@ -10,10 +10,10 @@ import {
 } from 'react-router-dom';
 
 // require database connection 
-const dbConnect = require("./db/dbConnect");
+//const dbConnect = require("./db/dbConnect");
 
 // execute database connection 
-dbConnect();
+//dbConnect();
 
 
 function App() {
