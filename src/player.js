@@ -9,9 +9,19 @@ import {
 } from 'react-router-dom';
 //import { Link } from 'react-router-dom';
 
-function Chara() {
+const Record = (props) => (
+  <tr>
+    <td>{props.record.name}</td>
+    <td>{props.record.bio}</td>
+    <td>{props.record.age}</td>
+    <td>{props.record.role}</td>
+  </tr>
+)
 
-  console.log("TEST")
+function Chara() {
+  const [records, setRecords] = useState([]);
+
+  let characterRows = [];
 
   let backgroundImageURL = "./assets/bg3.jpg"
 
@@ -37,15 +47,27 @@ function Chara() {
       }
   
       const records = await response.json();
+      setRecords(records);
       //setRecords(records);
-      console.log("Got records!")
-      console.log(records)
+      //console.log("Got records!")
+      //console.log(records)
     }
   
     getRecords();
   
     return;
-  }, [0]);
+  }, [records.length]);
+
+  function characterList() {
+    return records.map((record) => {
+      return (
+        <Record
+          record={record}
+          key={record._id}
+        />
+      );
+    })
+  }
 
 
   return (
@@ -82,6 +104,15 @@ function Chara() {
           </div>
         </div>
         <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+        
+        <table>
+          <thead>
+            <tr>
+              <th>NAME</th>
+            </tr>
+          </thead>
+          <tbody> {characterList()}</tbody>
+        </table>
 
 
       </div>
