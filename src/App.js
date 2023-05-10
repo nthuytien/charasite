@@ -1,6 +1,7 @@
 import React, { Component }  from 'react';
 import './App.css';
 import Player from './player';
+import Journal from './journal';
 import {
   BrowserRouter as Router,
   Routes,
@@ -22,6 +23,7 @@ function App() {
       <Routes>
       <Route exact path="/" element={<Home />} />
       <Route path="/player" element={<Player/>}/>
+      <Route path="/journal" element={<Journal/>}/>
       </Routes>
       
     </Router>
@@ -40,6 +42,10 @@ function Home() {
     navigate(path)
   }
 
+  const routeChangeJ = () => {
+    let path = '/journal'
+    navigate(path)
+  }
 
   return (
     <div className="App">
@@ -62,7 +68,7 @@ Nibh ipsum consequat nisl vel pretium. Nulla posuere sollicitudin aliquam ultric
     <br/>
       <div className='button'>
 
-        <button>Rulebook</button>  <button>NPC Characters</button>  <button onClick={routeChange}>Player Characters</button> <button>Campaign</button> 
+        <button>Rulebook</button>  <button>NPC Characters</button>  <button onClick={routeChange}>Player Characters</button> <button onClick={routeChangeJ}>Campaign</button> 
       </div>
 
       <br/><br/>
