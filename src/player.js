@@ -9,6 +9,8 @@ import {
 } from 'react-router-dom';
 //import { Link } from 'react-router-dom';
 
+//Okay this part kinda confused me but as far as I can tell it's basically just defining the
+//HTML structure for a "Record", which is how we'll process all of our characters.
 const Record = (props) => (
   <tr>
     <td>{props.record.name}</td>
@@ -19,6 +21,8 @@ const Record = (props) => (
 )
 
 function Chara() {
+  // Still getting used to useState honestly but for some reason this is necessary?
+  // It's a React thing and we'll figure it out.
   const [records, setRecords] = useState([]);
 
   let characterRows = [];
@@ -32,9 +36,13 @@ function Chara() {
     navigate(path)
   }
 
+  // I'm also still not sure about the useEffect() bit but this is getting the records from the DB
+  // and setting them using the state
   useEffect(() => {
     async function getRecords() {
       console.log("Fetching...")
+      // The server code is running the DB connection on port 5000 and the record.js file defined
+      // this /record/ route as a way to just grab all of our characters as a response.
       const response = await fetch(`http://localhost:5000/record/`);
   
       if (!response.ok) {
@@ -46,6 +54,7 @@ function Chara() {
         console.log("No error!")
       }
   
+      // Now we take the JSON from that response and set our records to that.
       const records = await response.json();
       setRecords(records);
       //setRecords(records);
@@ -58,6 +67,8 @@ function Chara() {
     return;
   }, [records.length]);
 
+  // Here we create a function that will actually create a Record (that HTML at the top of the file)
+  // from each of the records we just got.  We don't call this immediately, but we will use it later
   function characterList() {
     return records.map((record) => {
       return (
@@ -104,7 +115,9 @@ function Chara() {
           </div>
         </div>
         <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-        
+        {/*--And down here we create a table.
+              We call characterList() to use the function we defined earlier
+              and create a Record for each character.  It basically just inserts whatever gets returned.*/}
         <table>
           <thead>
             <tr>
