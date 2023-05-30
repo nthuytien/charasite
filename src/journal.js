@@ -10,12 +10,9 @@ import {
 //import { Link } from 'react-router-dom';
 
 const Record = (props) => (
-  <tr>
-    <td>{props.record.name}</td>
-    <td>{props.record.bio}</td>
-    <td>{props.record.age}</td>
-    <td>{props.record.role}</td>
-  </tr>
+  <div>
+    {props.record.info}
+  </div>
 )
 
 function Journal() {
@@ -35,7 +32,7 @@ function Journal() {
   useEffect(() => {
     async function getRecords() {
       console.log("Fetching...")
-      const response = await fetch(`http://localhost:5000/record/`);
+      const response = await fetch(`http://localhost:5000/journal/`);
   
       if (!response.ok) {
         const message = `An error occurred: ${response.statusText}`;
@@ -58,7 +55,7 @@ function Journal() {
     return;
   }, [records.length]);
 
-  function characterList() {
+  function journalList() {
     return records.map((record) => {
       return (
         <Record
@@ -86,6 +83,8 @@ function Journal() {
         <br /><br />
         Session Summaries
         <hr /><br />
+
+        {journalList()}
 
 
 
