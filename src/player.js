@@ -11,10 +11,12 @@ import {
 
 //Okay this part kinda confused me but as far as I can tell it's basically just defining the
 //HTML structure for a "Record", which is how we'll process all of our characters.
+
+//<img className="imageC" src={require('./assets/marcie.png')} />
 const Record = (props) => (
 
   <div className="row"><div className="column3">
-    <img className="imageC" src={require('./assets/marcie.png')} />
+    <img className="imageC" src={require("" + props.record.imageFile)} />
   </div>
     <div className="column2">
 
@@ -106,8 +108,6 @@ function Chara() {
         Player Characters for CyberPunk:Red Campaign
         <hr /><br />
 
-
-
         <br /><br />
         <div className="row"><div className="column3">
           <img className="imageC" src={require('./assets/marcie.png')} />
@@ -127,12 +127,7 @@ function Chara() {
         {/*--And down here we create a table.
               We call characterList() to use the function we defined earlier
               and create a Record for each character.  It basically just inserts whatever gets returned.*/}
-        
-
-
       </div>
-
-
     </div>
   );
 }
